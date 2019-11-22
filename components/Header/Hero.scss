@@ -1,33 +1,16 @@
+@import 'styles/screenSize.scss';
+
 .Hero {
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  &::before {
-    content: '';
-  }
-
-  &::after {
-    content: '';
-    left: calc(100% - 1.5rem);
-  }
-
-  &::before,
-  &::after {
-    background: #fff;
-    color: #888888;
-    display: block;
-    font-size: 20px;
-    height: 3rem;
-    position: absolute;
-    top: calc(50% - 1.5rem);
-    width: 1.5rem;
-    z-index: 100;
-  }
+  filter: brightness(100%);
+  border: 0px solid #fff;
+  transition: border ease-in-out .2s;
 
   &:hover {
-    filter: brightness(80%);
-    transition: filter ease-in-out .2s;
+    transition: border ease-in-out .2s;
+    border: 10px solid #fff;
   }
 
   &__container {
@@ -43,19 +26,38 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: solid 2px #fff;
+    border: solid 1px #fff;
     color: #fff;
-    height: 8%;
     text-align: center;
-    width: 10%;
+    height: 35px;
+    width: 90px;
     margin: 0 auto;
+    font-size: 0.75rem;
+
+    @include md {
+      width: 130px;
+      height: 50px;
+      font-size: 0.825rem;
+      border-width: 2px;
+    }
+
+    @include lg {
+      width: 150px;
+      height: 65px;
+      font-size: 1rem;
+      border-width: 2px;
+    }
   }
 
   &__tagline {
     color: #fff;
-    font-size: 50px;
+    font-size: 30px;
     margin: 0 auto;
     text-transform: uppercase;
+
+    @include md {
+      font-size: 50px;
+    }
   }
 }
 

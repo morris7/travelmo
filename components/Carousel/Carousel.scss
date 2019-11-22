@@ -1,0 +1,42 @@
+.Carousel {
+  display: flex;
+
+  &__link--left-arrow {
+    float: left;
+  }
+
+  &__link--right-arrow {
+    float: right;
+  }
+
+  &__image--hidden {
+    display: none;
+  }
+
+  &__link--left-arrow,
+  &__link--right-arrow {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+    width: 0px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  &::before,
+  &::after {
+    background: #fff;
+    color: #888888;
+    display: block;
+    font-size: 20px;
+    height: 3rem;
+    position: absolute;
+    top: calc(50% - 1.5rem);
+    width: 1.5rem;
+    z-index: 100;
+  }
+}

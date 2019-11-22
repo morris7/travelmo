@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/index.css'
+import '../styles/index.scss'
 import Header from '../components/Header/Header'
 import Tracking from '../components/Tracking';
 
