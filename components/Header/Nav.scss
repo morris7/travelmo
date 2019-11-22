@@ -1,5 +1,20 @@
+@import 'styles/screenSize.scss';
+
 .Nav {
-    a { 
-        color: #3d3b3b;  
-    }
+  height: 3rem;
+  font-size: 0.75rem;
+
+  @include md {
+    height: 3rem;
+    font-size: 1rem;
+}
+  
+  @include lg {
+      height: 4rem;
+      font-size: 1rem;
+  }
+  
+  a { 
+      color: #3d3b3b;  
+  }
 }

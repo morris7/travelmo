@@ -47,15 +47,23 @@
       font-size: 1rem;
       border-width: 2px;
     }
+
+    &:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
   }
 
   &__tagline {
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
     margin: 0 auto;
     text-transform: uppercase;
 
     @include md {
+      font-size: 40px;
+    }
+
+    @include lg {
       font-size: 50px;
     }
   }

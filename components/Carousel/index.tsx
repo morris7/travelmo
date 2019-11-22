@@ -41,7 +41,7 @@ class Carousel extends React.PureComponent<ICarouselProps> {
     return (
       <aside className={rootClass}>
         <a href="#" className="Carousel__link--left-arrow" onClick={this.clickLeft}>
-          {'<'}
+          <svg id="i-chevron-left" className="bs-icon" viewBox="0 0 32 32"><path d="M20 30 L8 16 20 2"></path> </svg>
         </a>
         <div className="Carousel__image-container">
           {children.map((child, index) => {
@@ -52,7 +52,7 @@ class Carousel extends React.PureComponent<ICarouselProps> {
 
         </div>
         <a href="#" className="Carousel__link--right-arrow" onClick={this.clickRight}>
-          {'>'}
+          <svg id="i-chevron-right" className="bs-icon" viewBox="0 0 32 32"><path d="M12 30 L24 16 12 2"></path> </svg>
         </a>
 
       </aside>

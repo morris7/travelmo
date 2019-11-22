@@ -23,7 +23,7 @@ const links: ILink[] = [
 })
 
 const Nav = (props: INavProps) => (
-  <nav className={`Nav ${props.className} inset-0 h-20  bg-white`}>
+  <nav className={`Nav ${props.className} inset-0 bg-white`}>
     <ul className="flex flex-row h-full">
       <li className={liStyles}>
         <Link href='/'>

@@ -14,5 +14,18 @@ p {
     margin: 16px 0px;
 }
 
+.bs-icon {
+    display: inline-block;
+    fill: none;
+    margin: 0.2em;
+    font-size: 1em;
+    width: 1em;
+    stroke: currentColor;
+    stroke-width: inherit;
+    stroke-linecap: inherit;
+    stroke-linejoin: inherit;
+    overflow: visible;
+  }
+
 @tailwind components;
 @tailwind utilities;
