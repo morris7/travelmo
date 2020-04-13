@@ -1,0 +1,16 @@
+.cache
+.env*
+.git*
+.gitignore
+coverage
+docker-compose*
+Dockerfile*
+log*
+output*
+packer*
+README*
+reports
+storybook-static
+**/tmp
+
+node_modules
