@@ -43,3 +43,4 @@ services:
 
 volumes:
   db_data: {}
+  web-root: {}
