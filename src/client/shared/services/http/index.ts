@@ -1,3 +1,3 @@
-import * from '.http';
+export * from './http';
 
-export { default } from '.http'̀;
+export { default } from './http';
