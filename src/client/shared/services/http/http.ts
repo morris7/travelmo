@@ -10,13 +10,16 @@ class Http {
     });
   }
 
-  async getPosts() {
+  public async getPosts() {
     try {
       const response = await this.http.get('/posts');
-      console.log(response);
+      return response;
     } catch (error) {
       console.error(error);
     }
   }
 }
-}
+
+const HttpInstance = new Http();
+
+export default HttpInstance;
