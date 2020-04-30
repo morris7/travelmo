@@ -5,6 +5,7 @@ COPY package*.json ./
 USER node
 RUN npm install
 COPY --chown=node:node . .
+ADD --chown=node:node ./pages/location/[[]location].js ./pages/location/
 EXPOSE 3000
 RUN npm run build
 CMD ["npm", "start"]
