@@ -1,0 +1,57 @@
+@import "src/client/styles/screenSize.scss";
+
+.Post {
+  border: solid 1px rgba(242, 242, 242, 0.9);
+  cursor: pointer;
+  width: 100%;
+
+  @include lg {
+    width: 70%;
+  }
+
+  &__section {
+    font-size: 0.875rem;
+    margin: 0 0.75rem;
+
+    @include md {
+      margin: 0 1rem;
+    }
+
+    &--info {
+      align-items: center;
+      display: flex;
+      border-top: solid 1px rgb(204, 204, 204);
+    }
+  }
+
+  &__image-container {
+    max-height: 25rem;
+    overflow: hidden;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 1.5rem 0 0 0;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+
+    &--small {
+      display: flex;
+      margin-right: 1rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  &__like-button {
+    flex-grow: 1;
+
+    .bs-icon {
+      display: flex;
+      fill: #000;
+      margin-left: auto;
+    }
+  }
+}

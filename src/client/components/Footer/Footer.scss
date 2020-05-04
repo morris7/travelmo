@@ -1,0 +1,21 @@
+.Footer {
+  // background-color: black;
+  background-color: #f2f2f2;
+  margin-top: 2rem;
+  // color: white;
+  color: rgb(105, 105, 105);
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+
+  &__list {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  &__list-item {
+    margin-right: 2rem;
+  }
+}

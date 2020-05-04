@@ -1,0 +1,33 @@
+@import "src/client/styles/screenSize.scss";
+
+.Main {
+  &__container {
+    margin: 0 0;
+    font-size: 0.875rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2rem;
+
+    @include lg {
+      margin: 0 5rem;
+    }
+  }
+
+  &__text {
+    @include lg {
+      width: 75%;
+    }
+  }
+
+  &__Post {
+    margin: 0.75rem 0;
+
+    @include md {
+      margin: 1.5rem 0;
+    }
+  }
+}

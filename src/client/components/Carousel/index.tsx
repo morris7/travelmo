@@ -45,7 +45,7 @@ class Carousel extends React.PureComponent<ICarouselProps> {
         </a>
         <div className="Carousel__image-container">
           {children.map((child, index) => {
-            console.log('this.state.count', this.state.count)
+            // console.log('this.state.count', this.state.count)
             const toggleHide = index === this.state.count ? 'Carousel__image--hidden' : '';
             return <img src={child.props.src} className={toggleHide} key={index} />
           })}
