@@ -61,6 +61,28 @@
   &__nav--primary {
     #{$root}__list {
       padding-left: $padding-edges;
+
+      &-item {
+        display: none;
+
+        @include lg {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__nav--mobile {
+    display: flex;
+    align-items: center;
+
+    @include lg {
+      display: none;
+    }
+
+    .bs-icon {
+      width: 2rem;
+      color: rgb(105, 105, 105);
     }
   }
 

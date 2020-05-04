@@ -35,6 +35,9 @@ const Nav = (props: INavProps) => {
     <section className={`${classes} ${ROOT_CLASSNAME}__container`}>
       <nav className={`${ROOT_CLASSNAME}__nav--primary inset-0`}>
         <ul className={`${ROOT_CLASSNAME}__list flex h-full`}>
+          <li className={`${ROOT_CLASSNAME}__nav--mobile`}>
+            <svg id="i-menu" className="bs-icon" viewBox="0 0 32 32"><path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24"></path></svg>
+          </li>
           {links.map(({ key, href, label }, index) => (
             <li className={`${ROOT_CLASSNAME}__list-item ${liStyles}`} key={index}>
               <Link href={href}>
