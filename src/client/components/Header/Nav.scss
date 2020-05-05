@@ -83,6 +83,7 @@
     .bs-icon {
       width: 2rem;
       color: rgb(105, 105, 105);
+      stroke-width: 1.5px;
     }
   }
 
@@ -124,5 +125,13 @@
 
   &__sub-nav {
     display: none;
+  }
+
+  #share-social-outline {
+    stroke-width: 1rem;
+    color: rgb(105, 105, 105);
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-left: -0.25rem;
   }
 }
