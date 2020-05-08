@@ -1,0 +1,1 @@
+export const replaceUrl = (url: string) => url.replace('http://travelmo.co:8080', 'https://wp.travelmo.co');

@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import './Post.scss';
 import Link from 'next/link';
+import { replaceUrl } from '../../shared/utils/url';
 
 interface IPostProps {
   src: string;
@@ -19,7 +20,7 @@ const Post: React.FunctionComponent<IPostProps> = ({ src, className, title, summ
     <article className={`${ROOT_CLASSNAME} ${classes}`}>
       <div className={`${ROOT_CLASSNAME}__image-container`}>
         <Link href={`/location/${slug}`}>
-          <img className={`${ROOT_CLASSNAME}__image`} src={src} />
+          <img className={`${ROOT_CLASSNAME}__image`} src={replaceUrl(src)} />
         </Link>
       </div>
       <section className={`${ROOT_CLASSNAME}__section`}>
