@@ -8,22 +8,38 @@ import Post from '../src/client/components/Post';
 import './index.scss';
 import Footer from '../src/client/components/Footer';
 
+interface IPostProps {
+  title: string;
+}
 interface IHomeProps {
   content: string;
+  posts: IPostProps[];
+  homePageContent: string;
 }
+
 const ROOT_CLASSNAME = 'Main';
 
-const Home = (props) => {
+const Home = ({ posts, homePageContent }) => {
+  console.log('posts', posts)
   return (
     <Tracking>
       <main className={`${ROOT_CLASSNAME}__container main-container`}>
         <Header />
         <article className={`${ROOT_CLASSNAME}__content`}>
           <h1 className="flex-1 text-center my-8 text-3xl">TravelMo!</h1>
-          <section className={`${ROOT_CLASSNAME}__text`} dangerouslySetInnerHTML={{ __html: props.content }} />
-          <Post className={`${ROOT_CLASSNAME}__Post`} src="http://travelmo.co:8080/wp-content/uploads/2020/05/photOfMe-1-1024x576.jpg" />
-          <Post className={`${ROOT_CLASSNAME}__Post`} src="/test2.jpg" />
-          <Post className={`${ROOT_CLASSNAME}__Post`} src="/test.jpg" />
+          <section className={`${ROOT_CLASSNAME}__text`} dangerouslySetInnerHTML={{ __html: homePageContent }} />
+          {
+            posts.map((post, index) => (
+              <Post
+                key={index}
+                className={`${ROOT_CLASSNAME}__Post`}
+                src={post.acf.quickImage.sizes.large}
+                title={post.title.rendered}
+                summary={post.excerpt.rendered}
+                slug={post.slug}
+              />
+            ))
+          }
         </article>
         <Footer />
       </main>
@@ -32,11 +48,15 @@ const Home = (props) => {
 }
 
 Home.getInitialProps = async ctx => {
-  const posts = await http.getPosts();
-  const content = posts && posts.data && posts.data[0] && posts.data[0].content && posts.data[0].content.rendered;
+  const homePage = await http.getHomePage();
+  const allPosts = await http.getPosts();
+
+  const homePageContent = homePage && homePage.data && homePage.data && homePage.data.content && homePage.data.content.rendered;
+  const posts = allPosts && allPosts.data;
 
   return {
-    content
+    homePageContent,
+    posts
   };
 }
 

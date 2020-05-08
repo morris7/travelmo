@@ -18,6 +18,24 @@ class Http {
       console.error(error);
     }
   }
+
+  public async getHomePage() {
+    try {
+      const response = await this.http.get('/posts/1');
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  public async getPost(slug) {
+    try {
+      const response = await this.http.get(`/posts?slug=${slug}`);
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
 
 const HttpInstance = new Http();

@@ -68,12 +68,17 @@ const Nav = (props: INavProps) => {
         </ul>
       </nav>
       <section className={`${ROOT_CLASSNAME}__logo-container`}>
-        <p className={`${ROOT_CLASSNAME}__logo-text`}>
-          <span className={`${ROOT_CLASSNAME}__logo-text--1`}>Tra</span>
-          <span className={`${ROOT_CLASSNAME}__logo-text--2`}>vel</span>
-          <span className={`${ROOT_CLASSNAME}__logo-text--3`}>M</span>
-        </p>
-        <img className={`${ROOT_CLASSNAME}__logo`} src="/globe_small.png" />
+        <Link href="/">
+          <a className={`${ROOT_CLASSNAME}__logo-link`}>
+            <p className={`${ROOT_CLASSNAME}__logo-text`}>
+              <span className={`${ROOT_CLASSNAME}__logo-text--1`}>Tra</span>
+              <span className={`${ROOT_CLASSNAME}__logo-text--2`}>vel</span>
+              <span className={`${ROOT_CLASSNAME}__logo-text--3`}>M</span>
+            </p>
+
+            <img className={`${ROOT_CLASSNAME}__logo`} src="/globe_small.png" />
+          </a>
+        </Link>
       </section>
       <nav className={`${ROOT_CLASSNAME}__nav--social-media`}>
         <ul className={`${ROOT_CLASSNAME}__list flex h-full`}>

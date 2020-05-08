@@ -17,5 +17,10 @@
 
   &__list-item {
     margin-right: 2rem;
+
+    &--text {
+      display: inline;
+      margin: 0;
+    }
   }
 }
