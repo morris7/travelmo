@@ -2,6 +2,7 @@ import React from 'react'
 import classNames from 'classnames';
 import Link from 'next/link'
 import './Nav.scss';
+import SubNav from './SubNav';
 
 interface ILink {
   href: string;
@@ -61,11 +62,7 @@ const Nav = (props: INavProps) => {
               <Link href={href}>
                 <a className={`${ROOT_CLASSNAME}__link`} href={href}>{label}</a>
               </Link>
-              <ul className={`${ROOT_CLASSNAME}__sub-nav`}>
-                <li><a href="#">argentina</a></li>
-                <li><a href="#">colombia</a></li>
-                <li><a href="#">peru</a></li>
-              </ul>
+              <SubNav className={`${ROOT_CLASSNAME}__sub-nav`} level={label} />
             </li>
           ))}
         </ul>

@@ -4,7 +4,7 @@ import Hero from './Hero';
 import Nav from './Nav';
 
 const Header = () => (
-    <section className="Header">
+    <header className="Header">
         <Head>
             <title>Home</title>
             <link rel='icon' href='/favicon.ico' />
@@ -12,7 +12,7 @@ const Header = () => (
         </Head>
         <Nav />
         <Hero />
-    </section>
+    </header>
 )
 
 export default Header;
