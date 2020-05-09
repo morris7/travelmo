@@ -1,0 +1,11 @@
+.Location {
+  &__Carousel {
+    margin: 2rem 0;
+
+    .Carousel__link--right-arrow {
+      justify-content: center;
+      align-self: center;
+      color: black;
+    }
+  }
+}

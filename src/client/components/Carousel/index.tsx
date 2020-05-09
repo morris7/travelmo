@@ -9,7 +9,7 @@ interface ICarouselProps {
 
 class Carousel extends React.PureComponent<ICarouselProps> {
   state = {
-    count: 0
+    activeIndex: 0
   }
 
   MAX_LENGTH = this.props.children.length;
@@ -17,21 +17,21 @@ class Carousel extends React.PureComponent<ICarouselProps> {
   clickLeft = (e) => {
     e.preventDefault();
 
-    if (this.state.count > 0) {
-      return this.setState({ count: this.state.count - 1 });
+    if (this.state.activeIndex > 0) {
+      return this.setState({ activeIndex: this.state.activeIndex - 1 });
     }
 
-    return this.setState({ count: this.MAX_LENGTH - 1 });
+    return this.setState({ activeIndex: this.MAX_LENGTH - 1 });
   }
 
   clickRight = (e) => {
     e.preventDefault();
 
-    if (this.state.count < this.MAX_LENGTH - 1) {
-      return this.setState({ count: this.state.count + 1 });
+    if (this.state.activeIndex < this.MAX_LENGTH - 1) {
+      return this.setState({ activeIndex: this.state.activeIndex + 1 });
     }
 
-    return this.setState({ count: 0 });
+    return this.setState({ activeIndex: 0 });
   }
 
   render() {
@@ -45,8 +45,7 @@ class Carousel extends React.PureComponent<ICarouselProps> {
         </a>
         <div className="Carousel__image-container">
           {children.map((child, index) => {
-            // console.log('this.state.count', this.state.count)
-            const toggleHide = index === this.state.count ? 'Carousel__image--hidden' : '';
+            const toggleHide = index !== this.state.activeIndex ? 'Carousel__image--hidden' : '';
             return <img src={child.props.src} className={toggleHide} key={index} />
           })}
 

@@ -1,16 +1,27 @@
-import { useRouter } from 'next/router';
 import http from '../../src/client/shared/services/http';
+import LocationLayout from '../../templates/Location';
+import Carousel from '../../src/client/components/Carousel';
+
+import './Location.scss';
+
+const ROOT_CLASSNAME = 'Main';
 
 const Location = ({ post }) => {
-  const router = useRouter();
-  const query = router.query;
-  console.log('post', post)
+  console.log('post', post);
   return (
-    <article>
-      {/* <h1>{query.location}</h1> */}
-      <h1>{post.title.rendered}</h1>
-      <section dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-    </article>
+    <LocationLayout>
+      <article className={`${ROOT_CLASSNAME}__content`}>
+        <Carousel className="Location">
+          {
+            post.acf.gallery.map((item) => (
+              <img src={item.sizes.large} />
+            ))
+          }
+        </Carousel>
+        <h1 className="flex-1 text-center my-8 text-3xl">{post.title.rendered}</h1>
+        <section dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+      </article>
+    </LocationLayout>
   );
 }
 
