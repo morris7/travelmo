@@ -18,7 +18,7 @@ interface IHomeProps {
 const ROOT_CLASSNAME = 'Main';
 
 const Home = ({ posts, homePageContent }) => {
-  console.log('posts', posts);
+  console.log('posts', homePageContent);
   return (
     <MainLayout>
       <article className={`${ROOT_CLASSNAME}__content`}>
@@ -45,7 +45,7 @@ Home.getInitialProps = async ctx => {
   const homePage = await http.getHomePage();
   const allPosts = await http.getPosts();
 
-  const homePageContent = homePage && homePage.data && homePage.data && homePage.data.content && homePage.data.content.rendered;
+  const homePageContent = homePage && homePage.data && homePage.data[0] && homePage.data[0].content && homePage.data[0].content.rendered;
   const posts = allPosts && allPosts.data;
 
   return {

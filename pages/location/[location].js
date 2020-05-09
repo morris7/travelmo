@@ -4,14 +4,14 @@ import Carousel from '../../src/client/components/Carousel';
 
 import './Location.scss';
 
-const ROOT_CLASSNAME = 'Main';
+const ROOT_CLASSNAME = 'LocationLayout';
 
 const Location = ({ post }) => {
   console.log('post', post);
   return (
     <LocationLayout>
-      <article className={`${ROOT_CLASSNAME}__content`}>
-        <Carousel className="Location">
+      <article className={`${ROOT_CLASSNAME}__container`}>
+        <Carousel className={ROOT_CLASSNAME}>
           {
             post.acf.gallery.map((item) => (
               <img src={item.sizes.large} />
@@ -19,7 +19,10 @@ const Location = ({ post }) => {
           }
         </Carousel>
         <h1 className="flex-1 text-center my-8 text-3xl">{post.title.rendered}</h1>
-        <section dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+        <section
+          className={`${ROOT_CLASSNAME}__content`}
+          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+        />
       </article>
     </LocationLayout>
   );

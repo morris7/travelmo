@@ -3,37 +3,21 @@
 .Carousel {
   display: flex;
 
-  &__link--left-arrow {
-    float: left;
+  &__container {
+    display: flex;
   }
+
+  // &__link--left-arrow {
+  // }
 
   &__link--right-arrow {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    left: 90%;
-    height: 100%;
-    position: absolute;
-
-    @include xs {
-      left: 92%;
-    }
-
-    @include sm {
-      left: 94%;
-    }
+    margin-left: -2.25rem;
 
     @include md {
-      left: 93%;
-    }
-
-    @include lg {
-      left: 93%;
-    }
-
-    @include xl {
-      left: 95%;
+      margin-left: -3.5rem;
     }
   }
 

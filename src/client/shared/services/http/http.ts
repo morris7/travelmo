@@ -12,7 +12,7 @@ class Http {
 
   public async getPosts() {
     try {
-      const response = await this.http.get('/posts');
+      const response = await this.http.get('/posts?_fields=title,acf,excerpt,slug');
       return response;
     } catch (error) {
       console.error(error);
@@ -21,7 +21,7 @@ class Http {
 
   public async getHomePage() {
     try {
-      const response = await this.http.get('/posts/1');
+      const response = await this.http.get('/pages?slug=homepage&_fields=content');
       return response;
     } catch (error) {
       console.error(error);
@@ -30,7 +30,7 @@ class Http {
 
   public async getPost(slug) {
     try {
-      const response = await this.http.get(`/posts?slug=${slug}`);
+      const response = await this.http.get(`/posts?slug=${slug}&_fields=content,acf,title`);
       return response;
     } catch (error) {
       console.error(error);

@@ -12,7 +12,7 @@ const ROOT_CLASSNAME = 'MainLayout';
 
 const MainLayout: React.FunctionComponent<IMainLayoutProps> = ({ children }) => (
   <Tracking>
-    <main className={`${ROOT_CLASSNAME}__container main-container`}>
+    <main className={`${ROOT_CLASSNAME}__container`}>
       <Header />
       {children}
       <Footer />

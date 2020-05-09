@@ -12,7 +12,7 @@ const ROOT_CLASSNAME = 'LocationLayout';
 
 const LocationLayout: React.FunctionComponent<ILocationLayoutProps> = ({ children }) => (
   <Tracking>
-    <main className={`${ROOT_CLASSNAME}__container main-container`}>
+    <main className={`${ROOT_CLASSNAME}__layout-container`}>
       <Header showHero={false} />
       {children}
       <Footer />
