@@ -2,7 +2,7 @@ import http from '../../src/client/shared/services/http';
 import LocationLayout from '../../templates/Location';
 import Carousel from '../../src/client/components/Carousel';
 
-import './location.scss';
+import './Location.scss';
 
 const ROOT_CLASSNAME = 'LocationLayout';
 
