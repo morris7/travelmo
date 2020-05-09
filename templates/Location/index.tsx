@@ -2,7 +2,6 @@ import React from 'react';
 import Tracking from '../../src/client/components/Tracking';
 import Header from '../../src/client/components/Header/Header';
 import Footer from '../../src/client/components/Footer';
-import './Location.scss';
 
 interface ILocationLayoutProps {
   className?: string;
