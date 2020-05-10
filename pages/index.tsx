@@ -18,7 +18,6 @@ interface IHomeProps {
 const ROOT_CLASSNAME = 'Main';
 
 const Home = ({ posts, homePageContent }) => {
-  console.log('posts', homePageContent);
   return (
     <MainLayout seo={homePageContent.yoast_head}>
       <article className={`${ROOT_CLASSNAME}__content`}>
