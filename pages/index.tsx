@@ -24,7 +24,7 @@ const Home = ({ posts, homePageContent }) => {
         <h1 className="flex-1 text-center my-8 text-3xl">TravelMo!</h1>
         <section className={`${ROOT_CLASSNAME}__text`} dangerouslySetInnerHTML={{ __html: homePageContent.content.rendered }} />
         {
-          posts.map((post, index) => (
+          posts && posts.map((post, index) => (
             <Post
               key={index}
               className={`${ROOT_CLASSNAME}__Post`}

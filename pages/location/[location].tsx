@@ -20,7 +20,7 @@ const Location: StatelessPage<ILocationProps> = ({ post }) => {
       <article className={`${ROOT_CLASSNAME}__container`}>
         <Carousel className={ROOT_CLASSNAME}>
           {
-            post.acf.gallery.map((item) => (
+            post && post.acf.gallery.map((item) => (
               <img src={item.sizes['1536x1536']} />
             ))
           }

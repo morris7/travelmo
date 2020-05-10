@@ -57,7 +57,7 @@ const Nav = (props: INavProps) => {
           <li className={`${ROOT_CLASSNAME}__nav--mobile`}>
             <svg id="i-menu" className="bs-icon" viewBox="0 0 32 32"><path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24"></path></svg>
           </li>
-          {links.map(({ key, href, label }, index) => (
+          {links.map(({ href, label }, index) => (
             <li className={`${ROOT_CLASSNAME}__list-item ${liStyles}`} key={index}>
               <Link href={href}>
                 <a className={`${ROOT_CLASSNAME}__link`} href={href}>{label}</a>
