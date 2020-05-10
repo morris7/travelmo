@@ -5,6 +5,23 @@
 
   &__container {
     display: flex;
+    max-height: 45rem;
+    transition: transform 0.2s;
+    z-index: 1;
+
+    &--scale-up:hover {
+      transition: transform 0.5s;
+      transform: scale(1.05);
+    }
+
+    &--scale-down:hover {
+      transition: transform 0.5s;
+      transform: scale(0.95);
+    }
+  }
+
+  &__item {
+    object-fit: cover;
   }
 
   // &__link--left-arrow {

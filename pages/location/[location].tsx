@@ -1,6 +1,6 @@
 import http from '../../src/client/shared/services/http';
 import LocationLayout from '../../templates/Location';
-import Carousel from '../../src/client/components/Carousel';
+import Carousel, { ECarouelAnimation } from '../../src/client/components/Carousel';
 import { IAcf, IWordPressRenderable } from '../../src/client/shared/types/wordpress';
 
 import './Location.scss';
@@ -30,7 +30,7 @@ const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
   return (
     <LocationLayout seo={seo}>
       <article className={`${ROOT_CLASSNAME}__container`}>
-        <Carousel className={ROOT_CLASSNAME}>
+        <Carousel className={ROOT_CLASSNAME} animate={ECarouelAnimation.ZoomIn}>
           {
             locationPost && locationPost.acf.gallery.map((item) => (
               <img src={item.sizes['1536x1536']} />
