@@ -16,6 +16,7 @@ const ROOT_CLASSNAME = 'Post';
 
 const Post: React.FunctionComponent<IPostProps> = ({ src, className, title, summary, slug }) => {
   const classes = classNames(className);
+
   return (
     <article className={`${ROOT_CLASSNAME} ${classes}`}>
       <div className={`${ROOT_CLASSNAME}__image-container`}>

@@ -1,10 +1,9 @@
 import React from 'react';
-import Head from 'next/head';
 
 import './Hero.scss';
 import Carousel from '../Carousel';
 
-const Hero = () => (
+const Hero: React.FunctionComponent = () => (
   <section className="Hero relative flex">
 
     <Carousel className="Hero" >

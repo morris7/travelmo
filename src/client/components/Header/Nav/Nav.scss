@@ -94,6 +94,7 @@
   &__nav--mobile {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     @include lg {
       display: none;
@@ -102,7 +103,7 @@
     .bs-icon {
       width: 2rem;
       color: rgb(105, 105, 105);
-      stroke-width: 1.5px;
+      stroke-width: 1px;
     }
   }
 

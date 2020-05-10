@@ -47,7 +47,7 @@ if (process.browser) {
   }
 }
 
-const Nav = (props: INavProps) => {
+const Nav: React.FunctionComponent<INavProps> = (props) => {
   const classes = classNames(ROOT_CLASSNAME, props.className);
 
   return (

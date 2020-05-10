@@ -1,11 +1,19 @@
 import http from '../../src/client/shared/services/http';
 import LocationLayout from '../../templates/Location';
 import Carousel from '../../src/client/components/Carousel';
+import { IAcf, IWordPressRenderable } from '../../src/client/shared/types/wordpress';
 
 import './Location.scss';
 
 interface ILocationProps {
-  post: any;
+  locationPost: ILocationPost;
+}
+
+interface ILocationPost {
+  acf: IAcf;
+  yoast_head: string;
+  content: IWordPressRenderable;
+  title: IWordPressRenderable;
 }
 
 interface StatelessPage<P = {}> extends React.SFC<P> {
@@ -14,21 +22,23 @@ interface StatelessPage<P = {}> extends React.SFC<P> {
 
 const ROOT_CLASSNAME = 'LocationLayout';
 
-const Location: StatelessPage<ILocationProps> = ({ post }) => {
+const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
+  const seo = locationPost && locationPost.yoast_head || undefined;
+
   return (
-    <LocationLayout seo={post.yoast_head}>
+    <LocationLayout seo={seo}>
       <article className={`${ROOT_CLASSNAME}__container`}>
         <Carousel className={ROOT_CLASSNAME}>
           {
-            post && post.acf.gallery.map((item) => (
+            locationPost && locationPost.acf.gallery.map((item) => (
               <img src={item.sizes['1536x1536']} />
             ))
           }
         </Carousel>
-        <h1 className="flex-1 text-center my-8 text-3xl">{post.title.rendered}</h1>
+        <h1 className="flex-1 text-center my-8 text-3xl">{locationPost.title.rendered}</h1>
         <section
           className={`${ROOT_CLASSNAME}__content`}
-          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          dangerouslySetInnerHTML={{ __html: locationPost.content.rendered }}
         />
       </article>
     </LocationLayout>
@@ -40,7 +50,7 @@ Location.getInitialProps = async ctx => {
   const post = response && response.data && response.data[0];
 
   return {
-    post
+    locationPost: post
   };
 }
 
