@@ -32,12 +32,13 @@ const ROOT_CLASSNAME = 'Main';
 
 const Home: StatelessPage<IHomeProps> = ({ posts, homePageContent }) => {
   const seo = homePageContent && homePageContent.yoast_head || undefined;
+  const content = homePageContent && homePageContent.content && homePageContent.content.rendered;
 
   return (
     <MainLayout seo={seo}>
       <article className={`${ROOT_CLASSNAME}__content`}>
         <h1 className="flex-1 text-center my-8 text-3xl">TravelMo!</h1>
-        <section className={`${ROOT_CLASSNAME}__text`} dangerouslySetInnerHTML={{ __html: homePageContent.content.rendered }} />
+        <section className={`${ROOT_CLASSNAME}__text`} dangerouslySetInnerHTML={{ __html: content }} />
         {
           posts && posts.map((post, index) => (
             <Post

@@ -24,6 +24,8 @@ const ROOT_CLASSNAME = 'LocationLayout';
 
 const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
   const seo = locationPost && locationPost.yoast_head || undefined;
+  const content = locationPost && locationPost.content;
+  const title = locationPost && locationPost.title;
 
   return (
     <LocationLayout seo={seo}>
@@ -35,10 +37,10 @@ const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
             ))
           }
         </Carousel>
-        <h1 className="flex-1 text-center my-8 text-3xl">{locationPost.title.rendered}</h1>
+        <h1 className="flex-1 text-center my-8 text-3xl">{title.rendered}</h1>
         <section
           className={`${ROOT_CLASSNAME}__content`}
-          dangerouslySetInnerHTML={{ __html: locationPost.content.rendered }}
+          dangerouslySetInnerHTML={{ __html: content.rendered }}
         />
       </article>
     </LocationLayout>
