@@ -15,7 +15,6 @@ interface StatelessPage<P = {}> extends React.SFC<P> {
 const ROOT_CLASSNAME = 'LocationLayout';
 
 const Location: StatelessPage<ILocationProps> = ({ post }) => {
-  console.log('post', post);
   return (
     <LocationLayout seo={post.yoast_head}>
       <article className={`${ROOT_CLASSNAME}__container`}>
@@ -38,9 +37,8 @@ const Location: StatelessPage<ILocationProps> = ({ post }) => {
 
 Location.getInitialProps = async ctx => {
   const response = await http.getPost(ctx.query.location);
-
   const post = response && response.data && response.data[0];
-  console.log('post', post)
+
   return {
     post
   };

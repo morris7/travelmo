@@ -25,7 +25,6 @@ class Http {
   public async getHomePage() {
     try {
       const response = await this.http.get(`/pages?${homepageFields}`);;
-      console.log('response', response)
       return response;
     } catch (error) {
       console.error(error);
