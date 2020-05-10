@@ -7,6 +7,7 @@ const Hero: React.FunctionComponent = () => (
   <section className="Hero relative flex">
 
     <Carousel className="Hero" >
+      <img src="/heroImageTriptic.png" />
       <img src="/test.jpg" />
       <img src="/test2.jpg" />
     </Carousel>
