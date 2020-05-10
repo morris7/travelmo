@@ -9,7 +9,7 @@ class Http {
   constructor() {
     this.http = axios.create({
       baseURL: 'https://wp.travelmo.co/wp-json/wp/v2', //get this from env!
-      timeout: 1000
+      timeout: 5000
     });
   }
 
