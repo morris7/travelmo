@@ -1,5 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
 
+const postFields = '_fields=content,acf,title,yoast_head';
+const postsFields = '_fields=title,acf,excerpt,slug,yoast_head';
+const homepageFields = 'slug=homepage&_fields=content,yoast_head';
 class Http {
   private http: AxiosInstance;
 
@@ -12,7 +15,7 @@ class Http {
 
   public async getPosts() {
     try {
-      const response = await this.http.get('/posts?_fields=title,acf,excerpt,slug');
+      const response = await this.http.get(`/posts?${postsFields}`);
       return response;
     } catch (error) {
       console.error(error);
@@ -21,7 +24,8 @@ class Http {
 
   public async getHomePage() {
     try {
-      const response = await this.http.get('/pages?slug=homepage&_fields=content');
+      const response = await this.http.get(`/pages?${homepageFields}`);;
+      console.log('response', response)
       return response;
     } catch (error) {
       console.error(error);
@@ -30,7 +34,7 @@ class Http {
 
   public async getPost(slug) {
     try {
-      const response = await this.http.get(`/posts?slug=${slug}&_fields=content,acf,title`);
+      const response = await this.http.get(`/posts?slug=${slug}&${postFields}`);
       return response;
     } catch (error) {
       console.error(error);

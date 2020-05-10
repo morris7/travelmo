@@ -20,10 +20,10 @@ const ROOT_CLASSNAME = 'Main';
 const Home = ({ posts, homePageContent }) => {
   console.log('posts', homePageContent);
   return (
-    <MainLayout>
+    <MainLayout seo={homePageContent.yoast_head}>
       <article className={`${ROOT_CLASSNAME}__content`}>
         <h1 className="flex-1 text-center my-8 text-3xl">TravelMo!</h1>
-        <section className={`${ROOT_CLASSNAME}__text`} dangerouslySetInnerHTML={{ __html: homePageContent }} />
+        <section className={`${ROOT_CLASSNAME}__text`} dangerouslySetInnerHTML={{ __html: homePageContent.content.rendered }} />
         {
           posts.map((post, index) => (
             <Post
@@ -45,7 +45,7 @@ Home.getInitialProps = async ctx => {
   const homePage = await http.getHomePage();
   const allPosts = await http.getPosts();
 
-  const homePageContent = homePage && homePage.data && homePage.data[0] && homePage.data[0].content && homePage.data[0].content.rendered;
+  const homePageContent = homePage && homePage.data && homePage.data[0];
   const posts = allPosts && allPosts.data;
 
   return {

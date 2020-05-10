@@ -4,17 +4,25 @@ import Carousel from '../../src/client/components/Carousel';
 
 import './Location.scss';
 
+interface ILocationProps {
+  post: any;
+}
+
+interface StatelessPage<P = {}> extends React.SFC<P> {
+  getInitialProps?: (ctx: any) => Promise<P>
+}
+
 const ROOT_CLASSNAME = 'LocationLayout';
 
-const Location = ({ post }) => {
+const Location: StatelessPage<ILocationProps> = ({ post }) => {
   console.log('post', post);
   return (
-    <LocationLayout>
+    <LocationLayout seo={post.yoast_head}>
       <article className={`${ROOT_CLASSNAME}__container`}>
         <Carousel className={ROOT_CLASSNAME}>
           {
             post.acf.gallery.map((item) => (
-              <img src={item.sizes.large} />
+              <img src={item.sizes['1536x1536']} />
             ))
           }
         </Carousel>

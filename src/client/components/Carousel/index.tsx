@@ -8,12 +8,30 @@ interface ICarouselProps {
   children: JSX.Element[];
 }
 
-class Carousel extends React.PureComponent<ICarouselProps> {
-  state = {
-    activeIndex: 0
+interface ICarouseState {
+  activeIndex: number;
+  srcs: string[];
+}
+
+class Carousel extends React.PureComponent<ICarouselProps, ICarouseState> {
+  state: ICarouseState = {
+    activeIndex: 0,
+    srcs: []
   }
 
   MAX_LENGTH = this.props.children.length;
+
+  componentDidMount() {
+    this.setState({
+      srcs: this.getSrcs()
+    })
+  }
+
+  getSrcs = (): string[] => {
+    return this.props.children.map((child) => (
+      child.props.src
+    ))
+  }
 
   clickLeft = (e) => {
     e.preventDefault();
@@ -36,8 +54,9 @@ class Carousel extends React.PureComponent<ICarouselProps> {
   }
 
   render() {
-    const { children, className } = this.props;
+    const { className } = this.props;
     const rootClass = classNames('Carousel', { [`${className}__Carousel`]: !!className });
+    const { activeIndex, srcs } = this.state;
 
     return (
       <aside className={rootClass}>
@@ -45,12 +64,10 @@ class Carousel extends React.PureComponent<ICarouselProps> {
           <a href="#" className="Carousel__link--left-arrow" onClick={this.clickLeft}>
             <svg id="i-chevron-left" className="bs-icon" viewBox="0 0 32 32"><path d="M20 30 L8 16 20 2"></path> </svg>
           </a>
-
-          {children.map((child, index) => {
-            const toggleHide = index !== this.state.activeIndex ? 'Carousel__image--hidden' : '';
-            return <img src={replaceUrl(child.props.src)} className={toggleHide} key={index} />
-          })}
-
+          <img src={replaceUrl(srcs[activeIndex])} key={activeIndex} />
+          {srcs[activeIndex + 1] &&
+            <img src={replaceUrl(srcs[activeIndex + 1])} className="Carousel__image--hidden" key={activeIndex + 1} />
+          }
           <a href="#" className="Carousel__link--right-arrow" onClick={this.clickRight}>
             <svg id="i-chevron-right" className="bs-icon" viewBox="0 0 32 32"><path d="M12 30 L24 16 12 2"></path> </svg>
           </a>

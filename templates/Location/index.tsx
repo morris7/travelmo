@@ -5,14 +5,15 @@ import Footer from '../../src/client/components/Footer';
 
 interface ILocationLayoutProps {
   className?: string;
+  seo?: string;
 }
 
 const ROOT_CLASSNAME = 'LocationLayout';
 
-const LocationLayout: React.FunctionComponent<ILocationLayoutProps> = ({ children }) => (
+const LocationLayout: React.FunctionComponent<ILocationLayoutProps> = ({ children, seo }) => (
   <Tracking>
     <main className={`${ROOT_CLASSNAME}__layout-container`}>
-      <Header showHero={false} />
+      <Header showHero={false} seo={seo} />
       {children}
       <Footer />
     </main>

@@ -6,14 +6,15 @@ import Footer from '../../src/client/components/Footer';
 
 interface IMainLayoutProps {
   className?: string;
+  seo?: string;
 }
 
 const ROOT_CLASSNAME = 'MainLayout';
 
-const MainLayout: React.FunctionComponent<IMainLayoutProps> = ({ children }) => (
+const MainLayout: React.FunctionComponent<IMainLayoutProps> = ({ children, seo }) => (
   <Tracking>
     <main className={`${ROOT_CLASSNAME}__container`}>
-      <Header />
+      <Header seo={seo} />
       {children}
       <Footer />
     </main>
