@@ -6,17 +6,25 @@
   &__container {
     display: flex;
     max-height: 45rem;
-    transition: transform 0.2s;
     z-index: 1;
+    overflow: hidden;
+
+    img {
+      transition: transform 0.3s;
+    }
 
     &--scale-up:hover {
-      transition: transform 0.5s;
-      transform: scale(1.05);
+      img {
+        transition: transform 0.5s;
+        transform: scale(1.03);
+      }
     }
 
     &--scale-down:hover {
-      transition: transform 0.5s;
-      transform: scale(0.95);
+      img {
+        transition: transform 0.5s;
+        transform: scale(1.2);
+      }
     }
   }
 
