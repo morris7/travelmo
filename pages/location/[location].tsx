@@ -51,17 +51,18 @@ const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
         <div className={`${ROOT_CLASSNAME}__section-container`}>
           {overview &&
             <section
-              className={`${ROOT_CLASSNAME}__category--weather`}
+              className={`${ROOT_CLASSNAME}__category-weather`}
               dangerouslySetInnerHTML={{ __html: weatherSvg + '<h2>Weather</h2>' + overview }}
             />
           }
 
           {googlemap &&
-            <section className={`${ROOT_CLASSNAME}__category--map`}>
+            <section className={`${ROOT_CLASSNAME}__category-map`}>
               <iframe
                 src={googlemap}
                 width="600"
                 height="450"
+                className={`${ROOT_CLASSNAME}__category-map-iframe`}
               />
             </section>
           }
