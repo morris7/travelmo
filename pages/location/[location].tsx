@@ -6,6 +6,7 @@ import { IAcf, IWordPressRenderable } from '../../src/client/shared/types/wordpr
 import './Location.scss';
 import GoogleMap from '../../src/client/components/Map';
 import Weather from '../../src/client/components/Weather';
+import { replaceUrlGlobalWp } from '../../src/client/shared/utils/url';
 
 interface ILocationProps {
   locationPost: ILocationPost;
@@ -45,7 +46,7 @@ const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
         <h1 className="flex-1 text-center my-8 text-3xl">{title.rendered}</h1>
         <section
           className={`${ROOT_CLASSNAME}__content`}
-          dangerouslySetInnerHTML={{ __html: content.rendered }}
+          dangerouslySetInnerHTML={{ __html: replaceUrlGlobalWp(content.rendered) }}
         />
 
         <div className={`${ROOT_CLASSNAME}__section-container`}>
