@@ -1,6 +1,6 @@
 @import "src/client/styles/screenSize.scss";
 
-.LocationLayout {
+.Location {
   &__container,
   &__content {
     display: flex;
@@ -27,7 +27,39 @@
     }
   }
 
+  &__section-container {
+    display: flex;
+    margin: 4rem 0;
+  }
+
+  &__category--weather,
+  &__category--map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0 0.5rem;
+  }
+
+  &__category--weather {
+    border: 1px solid rgb(242, 242, 242);
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+  }
+
   &__Carousel {
     margin: 2rem 0;
+  }
+
+  #partly-sunny-outline {
+    width: 4rem;
+    height: 4rem;
+    align-self: flex-start;
+    // color: rgb(242, 242, 242);
+    stroke-width: 3px;
   }
 }

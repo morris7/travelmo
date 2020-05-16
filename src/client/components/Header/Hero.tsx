@@ -6,11 +6,9 @@ import Carousel, { ECarouelAnimation } from '../Carousel';
 const Hero: React.FunctionComponent = () => (
   <section className="Hero relative flex">
 
-    <Carousel className="Hero" animate={ECarouelAnimation.ZoomOut} >
+    <Carousel className="Hero" animate={ECarouelAnimation.ZoomIn} >
       <img src="/test.jpg" />
       <img src="/test2.jpg" />
-      <img src="/heroImageTriptic.png" />
-      <img src="/hero4.jpg" />
       <img src="/hero5.jpg" />
     </Carousel>
 

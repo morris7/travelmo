@@ -19,12 +19,13 @@
 
   &__text {
     @include lg {
-      width: 75%;
+      max-width: 60%;
     }
   }
 
   &__Post {
     margin: 0.75rem 0;
+    max-width: 55rem;
 
     @include md {
       margin: 1.5rem 0;

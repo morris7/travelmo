@@ -13,17 +13,17 @@
       transition: transform 0.3s;
     }
 
-    &--scale-up:hover {
-      img {
-        transition: transform 0.5s;
-        transform: scale(1.03);
-      }
-    }
-
     &--scale-down:hover {
       img {
         transition: transform 0.5s;
-        transform: scale(1.2);
+        transform: scale(0.98);
+      }
+    }
+
+    &--scale-up:hover {
+      img {
+        transition: transform 0.5s;
+        transform: scale(1.05);
       }
     }
   }

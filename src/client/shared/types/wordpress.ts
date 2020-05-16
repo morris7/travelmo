@@ -4,6 +4,7 @@ export interface IWordPressRenderable {
 export interface IAcf {
   quickImage: IImageSizes;
   gallery: any;
+  place: any;
 }
 
 export interface IImageSizes {
