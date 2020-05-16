@@ -49,7 +49,7 @@ const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
         />
 
         <div className={`${ROOT_CLASSNAME}__section-container`}>
-          { &&
+          {overview &&
             <section
               className={`${ROOT_CLASSNAME}__category--weather`}
               dangerouslySetInnerHTML={{ __html: weatherSvg + '<h2>Weather</h2>' + overview }}
