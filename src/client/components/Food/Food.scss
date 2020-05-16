@@ -1,0 +1,13 @@
+.Food {
+  &__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  #restaurant-outline {
+    width: 3rem;
+    height: 3rem;
+    stroke-width: 3px;
+  }
+}

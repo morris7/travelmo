@@ -7,6 +7,8 @@ import './Location.scss';
 import GoogleMap from '../../src/client/components/Map';
 import Weather from '../../src/client/components/Weather';
 import { replaceUrlGlobalWp } from '../../src/client/shared/utils/url';
+import CurrencyConverter from '../../src/client/components/Currency';
+import Food from '../../src/client/components/Food';
 
 interface ILocationProps {
   locationPost: ILocationPost;
@@ -29,9 +31,12 @@ const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
   const seo = locationPost && locationPost.yoast_head || undefined;
   const content = locationPost && locationPost.content;
   const title = locationPost && locationPost.title;
-  const overview = locationPost.acf.place[0].weather[0].overview;
-  const googlemap = locationPost.acf.place[0].map[0].googlemap;
-  // console.log('post', locationPost);
+  const location = locationPost.acf.place[0];
+  const overview = location.weather[0].overview;
+  const googlemap = location.map[0].googlemap;
+  const currency = location.currency;
+  const foodOverview = location.food[0].overview;
+  console.log('post', locationPost);
 
   return (
     <LocationLayout seo={seo}>
@@ -48,6 +53,10 @@ const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
           className={`${ROOT_CLASSNAME}__content`}
           dangerouslySetInnerHTML={{ __html: replaceUrlGlobalWp(content.rendered) }}
         />
+
+        {foodOverview &&
+          <Food className={`${ROOT_CLASSNAME}__Food`} overview={foodOverview} />
+        }
 
         <div className={`${ROOT_CLASSNAME}__section-container`}>
           {overview &&
@@ -66,6 +75,12 @@ const Location: StatelessPage<ILocationProps> = ({ locationPost }) => {
             </section>
           }
         </div>
+
+        <CurrencyConverter
+          className={`${ROOT_CLASSNAME}__currency-converter`}
+          currencyFrom="GBP"
+          currencyTo={currency}
+        />
 
       </article>
     </LocationLayout >

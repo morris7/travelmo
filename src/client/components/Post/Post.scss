@@ -27,6 +27,11 @@
   &__image-container {
     max-height: 25rem;
     overflow: hidden;
+
+    img {
+      object-fit: none;
+      object-position: 0% 150%;
+    }
   }
 
   &__title {
