@@ -1,0 +1,51 @@
+@import "src/client/styles/screenSize.scss";
+
+.SocialMediaNav {
+  $padding-edges: 15%;
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 0;
+
+    @include md {
+      padding-right: $padding-edges;
+    }
+
+    &-item {
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+
+      .bs-icon {
+        height: 1rem;
+        width: 1rem;
+        fill: #999999;
+        cursor: pointer;
+
+        @include md {
+          height: 1.25rem;
+          width: 1.25rem;
+        }
+
+        &:hover {
+          fill: #194d91;
+        }
+      }
+    }
+  }
+
+  #share-social-outline {
+    stroke-width: 1rem;
+    color: rgb(105, 105, 105);
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: -0.25rem;
+
+    @include md {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}

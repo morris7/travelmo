@@ -1,0 +1,66 @@
+@import "src/client/styles/screenSize.scss";
+
+.PrimaryNav {
+  $root: &;
+  $padding-edges: 15%;
+  font-size: 0.75rem;
+  text-align: center;
+
+  @include md {
+    font-size: 0.875rem;
+  }
+
+  @include lg {
+    font-size: 0.875rem;
+  }
+
+  &__list {
+    padding-left: $padding-edges;
+
+    &-item {
+      margin-right: 2rem;
+      align-items: center;
+      display: none;
+      cursor: pointer;
+
+      #{$root}__sub-nav {
+        display: none;
+      }
+
+      @include lg {
+        display: flex;
+      }
+
+      &:hover {
+        #{$root}__sub-nav {
+          display: flex;
+          transition-delay: 1s;
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: rgb(105, 105, 105);
+
+    &:hover {
+      color: #194d91;
+    }
+  }
+
+  &__mobile-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include lg {
+      display: none;
+    }
+
+    .bs-icon {
+      width: 2rem;
+      color: rgb(105, 105, 105);
+      stroke-width: 1px;
+    }
+  }
+}
