@@ -1,5 +1,4 @@
 @import "src/client/styles/tools.scss";
-// @import "src/client/styles/variables.scss";
 
 .PrimaryNav {
   $root: &;
@@ -15,6 +14,8 @@
         height: 50rem;
         background-color: $nav_background-color;
         align-items: flex-start;
+        width: 22rem;
+        opacity: 0.9;
 
         .PrimaryNav__list-item {
           margin: 1rem 0;
@@ -38,8 +39,11 @@
   &__list {
     padding-left: $padding-edges;
     height: 100%;
-    display: flex;
     display: none;
+
+    @include lg {
+      display: flex;
+    }
 
     &-item {
       margin-right: 2rem;
@@ -55,10 +59,15 @@
       }
 
       &:hover {
-        #{$root}__sub-nav {
-          display: flex;
-          transition-delay: 1s;
-        }
+        // #{$root}__sub-nav {
+        //   display: flex;
+        //   transition-delay: 1s;
+        // }
+      }
+
+      .SubNav--is-open {
+        display: flex;
+        transition-delay: 1s;
       }
     }
   }
@@ -87,5 +96,10 @@
       color: rgba(105, 105, 105, 0.8);
       stroke-width: 1px;
     }
+  }
+
+  #i-close {
+    height: 1.5rem;
+    width: 1.5rem;
   }
 }

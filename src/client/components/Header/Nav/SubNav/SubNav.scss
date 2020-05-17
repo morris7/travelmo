@@ -1,5 +1,5 @@
 .SubNav {
-  // display: flex;
+  $root: &;
   position: absolute;
   top: 4rem;
   left: 0;
@@ -15,13 +15,29 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-
-    &-item {
-      // margin-right: 2rem;
-    }
   }
 
   &__link {
     text-decoration: underline;
+  }
+
+  &--mobile {
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+    width: 22rem;
+    height: 40rem;
+    padding: 1rem 0 0 3rem;
+    margin: 0;
+
+    #{$root}__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      &-item {
+        margin: 0.5rem;
+      }
+    }
   }
 }

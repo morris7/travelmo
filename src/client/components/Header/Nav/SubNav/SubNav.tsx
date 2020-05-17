@@ -7,32 +7,43 @@ import Link from 'next/link';
 interface ISubNavProps {
   className?: string;
   level?: string;
+  isMobile: boolean;
+  isOpen: boolean;
 }
 
 const ROOT_CLASSNAME = 'SubNav';
 
-const SubNav: React.FunctionComponent<ISubNavProps> = ({ className, level }) => {
-  const classes = classNames(ROOT_CLASSNAME, className);
+const SubNav: React.FunctionComponent<ISubNavProps> = (
+  { className, level, isMobile, isOpen }) => {
+  const classes = classNames(
+    ROOT_CLASSNAME,
+    className,
+    {
+      [`${ROOT_CLASSNAME}--mobile`]: isMobile,
+      [`${ROOT_CLASSNAME}--is-open`]: isOpen
+    }
+  );
 
   if (level === 'Destinations') {
     return (
       <section className={classes}>
         <ul className={`${ROOT_CLASSNAME}__list`}>
+          <li className={`${ROOT_CLASSNAME}__list-item`}>{'<<<'}</li>
           <li className={`${ROOT_CLASSNAME}__list-item`}>
-            <Link href="/location/argentina">
-              <a className={`${ROOT_CLASSNAME}__link`} href="#">argentina</a>
+            <Link href="/location/philippines">
+              <a className={`${ROOT_CLASSNAME}__link`} href="#">Philippines</a>
             </Link>
           </li>
           <li className={`${ROOT_CLASSNAME}__list-item`}>
-            <Link href="/location/colombia">
-              <a className={`${ROOT_CLASSNAME}__link`} href="#">colombia</a>
+            <Link href="/location/hong-kong">
+              <a className={`${ROOT_CLASSNAME}__link`} href="#">Hong Kong</a>
             </Link>
           </li>
-          <Link href="/location/peru">
+          {/* <Link href="/location/peru">
             <li className={`${ROOT_CLASSNAME}__list-item`}>
               <a className={`${ROOT_CLASSNAME}__link`} href="#">peru</a>
             </li>
-          </Link>
+          </Link> */}
         </ul>
       </section>
     );
