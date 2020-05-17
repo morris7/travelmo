@@ -5,12 +5,6 @@ import Logo from './Logo';
 import SocialMediaNav from './SocialMedia';
 import PrimaryNav from './PrimaryNav';
 
-interface ILink {
-  href: string;
-  label: string;
-  key: string;
-}
-
 interface INavProps {
   className?: string;
 }

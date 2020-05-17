@@ -1,10 +1,22 @@
-@import "src/client/styles/screenSize.scss";
+@import "src/client/styles/index.scss";
+// @import "src/client/styles/variables.scss";
 
 .PrimaryNav {
   $root: &;
   $padding-edges: 15%;
   font-size: 0.75rem;
   text-align: center;
+
+  &__container {
+    .MobileNav {
+      &--open {
+        display: flex;
+        flex-direction: column;
+        // z-index: 99;
+        background-color: $nav_background-color;
+      }
+    }
+  }
 
   @include md {
     font-size: 0.875rem;
@@ -16,11 +28,13 @@
 
   &__list {
     padding-left: $padding-edges;
+    height: 100%;
+    display: flex;
+    display: none;
 
     &-item {
       margin-right: 2rem;
       align-items: center;
-      display: none;
       cursor: pointer;
 
       #{$root}__sub-nav {
@@ -50,8 +64,10 @@
 
   &__mobile-icon {
     display: flex;
+    height: 100%;
     align-items: center;
     cursor: pointer;
+    margin-left: 0.75rem;
 
     @include lg {
       display: none;
@@ -59,7 +75,7 @@
 
     .bs-icon {
       width: 2rem;
-      color: rgb(105, 105, 105);
+      color: rgba(105, 105, 105, 0.8);
       stroke-width: 1px;
     }
   }

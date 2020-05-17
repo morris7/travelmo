@@ -26,3 +26,6 @@ p {
 
 @tailwind components;
 @tailwind utilities;
+
+@import "./variables.scss";
+@import "./index.scss";
