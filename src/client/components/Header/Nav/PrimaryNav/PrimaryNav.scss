@@ -59,10 +59,10 @@
       }
 
       &:hover {
-        // #{$root}__sub-nav {
-        //   display: flex;
-        //   transition-delay: 1s;
-        // }
+        #{$root}__sub-nav {
+          display: flex;
+          transition-delay: 1s;
+        }
       }
 
       .SubNav--is-open {
