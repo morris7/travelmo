@@ -1,4 +1,4 @@
-@import "src/client/styles/index.scss";
+@import "src/client/styles/tools.scss";
 // @import "src/client/styles/variables.scss";
 
 .PrimaryNav {
@@ -12,8 +12,17 @@
       &--open {
         display: flex;
         flex-direction: column;
-        // z-index: 99;
+        height: 50rem;
         background-color: $nav_background-color;
+        align-items: flex-start;
+
+        .PrimaryNav__list-item {
+          margin: 1rem 0;
+        }
+
+        .PrimaryNav__list-item:first-child {
+          margin-top: 2rem;
+        }
       }
     }
   }
